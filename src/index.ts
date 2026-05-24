@@ -53,6 +53,8 @@ interface ConstructorArgs {
   api: API;
   /** Read-only mode flag */
   readOnly: boolean;
+  /** Block API */
+  block: any;
 }
 
 /**
@@ -98,8 +100,9 @@ export default class Header implements BlockTool {
   * @private
   */
   private _element: HTMLHeadingElement;
+  private _block: any;
 
-  constructor({ data, config, api, readOnly }: ConstructorArgs) {
+  constructor({ data, config, api, readOnly, block }: ConstructorArgs) {
     this.api = api;
     this.readOnly = readOnly;
 
@@ -109,6 +112,7 @@ export default class Header implements BlockTool {
      * @type {HeaderConfig}
      * @private
      */
+    this._block = block;
     this._config = config ?? null;
 
     /**
@@ -127,9 +131,7 @@ export default class Header implements BlockTool {
      */
     this._element = this.getTag();
   }
-  /**
-   * Styles
-   */
+
   private get _CSS() {
     return {
       block: this.api.styles.block,
@@ -181,19 +183,29 @@ export default class Header implements BlockTool {
   }
 
   /**
-   * Returns header block tunes config
+   * Returns header block tunes config.
    *
-   * @returns {Array}
+   * Правило: если текущий блок — H1, скрываем все тюны
+   * (нельзя удалить, нельзя переместить, нельзя сменить уровень).
+   * Для H2/H3 показываем только переключатель уровней.
    */
   renderSettings(): MenuConfig {
-    return this.levels.map(level => ({
-      icon: level.svg,
-      label: this.api.i18n.t(`Heading ${level.number}`),
-      onActivate: () => this.setLevel(level.number),
-      closeOnActivate: true,
-      isActive: this.currentLevel.number === level.number,
-      render: () => document.createElement('div')
-    }));
+    // H1 — никаких настроек вообще
+    if (this._data.level === 1) {
+      return [];
+    }
+
+    // H2/H3 — только переключатель уровней (без delete/move — они встроенные)
+    return this.levels
+        .filter(level => level.number !== 1) // H1 нельзя выбрать из настроек
+        .map(level => ({
+          icon: level.svg,
+          label: this.api.i18n.t(`Heading ${level.number}`),
+          onActivate: () => this.setLevel(level.number),
+          closeOnActivate: true,
+          isActive: this.currentLevel.number === level.number,
+          render: () => document.createElement('div')
+        }));
   }
 
   /**
@@ -202,6 +214,9 @@ export default class Header implements BlockTool {
    * @param {number} level - level to set
    */
   setLevel(level: number): void {
+    // Запрещаем смену уровня на H1 через настройки
+    if (level === 1) return;
+
     this.data = {
       level: level,
       text: this.data.text,
@@ -216,7 +231,7 @@ export default class Header implements BlockTool {
    * @public
    */
   merge(data: HeaderData): void {
-    this._element.insertAdjacentHTML('beforeend', data.text)
+    this._element.insertAdjacentHTML('beforeend', data.text);
   }
 
   /**
@@ -363,11 +378,32 @@ export default class Header implements BlockTool {
      * Make tag editable
      */
     tag.contentEditable = this.readOnly ? 'false' : 'true';
+    tag.dataset['placeholder'] = this.api.i18n.t(this._config?.placeholder || '');
 
-    /**
-     * Add Placeholder
-     */
-    tag.dataset.placeholder = this.api.i18n.t(this._config?.placeholder || '');
+    // H1: блокируем Backspace в начале (чтобы не слить с предыдущим блоком)
+    // и Enter (чтобы не создавал новую строку внутри H1)
+    if (this._data.level === 1) {
+      tag.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          e.stopPropagation();
+          // Переходим к следующему блоку
+          this.api.caret.setToNextBlock('start');
+        }
+
+        if (e.key === 'Backspace') {
+          const sel = window.getSelection();
+          if (sel && sel.rangeCount) {
+            const range = sel.getRangeAt(0);
+            // Блокируем только если каретка в самом начале и нет выделения
+            if (range.startOffset === 0 && range.collapsed) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          }
+        }
+      });
+    }
 
     return tag;
   }
@@ -485,24 +521,12 @@ export default class Header implements BlockTool {
       let level = this.defaultLevel.number;
 
       switch (content.tagName) {
-        case 'H1':
-          level = 1;
-          break;
-        case 'H2':
-          level = 2;
-          break;
-        case 'H3':
-          level = 3;
-          break;
-        case 'H4':
-          level = 4;
-          break;
-        case 'H5':
-          level = 5;
-          break;
-        case 'H6':
-          level = 6;
-          break;
+        case 'H1': level = 1; break;
+        case 'H2': level = 2; break;
+        case 'H3': level = 3; break;
+        case 'H4': level = 4; break;
+        case 'H5': level = 5; break;
+        case 'H6': level = 6; break;
       }
 
       if (this._config?.levels) {
@@ -512,19 +536,15 @@ export default class Header implements BlockTool {
         });
       }
 
-      this.data = {
-        level,
-        text: content.innerHTML,
-      };
+      // Запрещаем вставку как H1 (если вставили H1 — делаем H2)
+      if (level === 1) {
+        level = this._config?.levels?.find(l => l !== 1) ?? 2;
+      }
+
+      this.data = { level, text: content.innerHTML };
     }
   }
 
-  /**
-   * Used by Editor.js paste handling API.
-   * Provides configuration to handle H1-H6 tags.
-   *
-   * @returns {{handler: (function(HTMLElement): {text: string}), tags: string[]}}
-   */
   static get pasteConfig() {
     return {
       tags: ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'],
@@ -532,16 +552,21 @@ export default class Header implements BlockTool {
   }
 
   /**
-   * Get Tool toolbox settings
-   * icon - Tool icon's SVG
-   * title - title to show in toolbox
-   *
-   * @returns {{icon: string, title: string}}
+   * H1 скрыт из тулбокса — пользователь не может добавить второй H1.
+   * В тулбоксе показываем только H2 (и H3 если разрешён в levels).
    */
   static get toolbox() {
-    return {
-      icon: IconHeading,
-      title: 'Heading',
-    };
+    return [
+      {
+        icon: IconH2,
+        title: 'Heading 2',
+        data: { level: 2 },
+      },
+      {
+        icon: IconH3,
+        title: 'Heading 3',
+        data: { level: 3 },
+      },
+    ];
   }
 }
