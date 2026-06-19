@@ -8,8 +8,8 @@ import { API, BlockTool, PasteEvent } from '@editorjs/editorjs';
 import type { MenuConfig } from '@editorjs/editorjs/types/tools';
 
 /**
-* @description Tool's input and output data format
-*/
+ * @description Tool's input and output data format
+ */
 export interface HeaderData {
   /** Header's content */
   text: string;
@@ -27,6 +27,8 @@ export interface HeaderConfig {
   levels?: number[];
   /** Default level */
   defaultLevel?: number;
+  holdFirstHeader: boolean;
+  placeholderLevel?: string;
 }
 
 /**
@@ -77,28 +79,28 @@ export default class Header implements BlockTool {
    */
   /**
    * Editor.js API
-  * @private
-  */
+   * @private
+   */
   private api: API;
   /**
-  * Read-only mode flag
-  * @private
-  */
+   * Read-only mode flag
+   * @private
+   */
   private readOnly: boolean;
   /**
-  * Tool's settings passed from Editor
-  * @private
-  */
+   * Tool's settings passed from Editor
+   * @private
+   */
   private _config: HeaderConfig | null;
   /**
-  * Block's data
-  * @private
-  */
+   * Block's data
+   * @private
+   */
   private _data: HeaderData;
   /**
-  * Main Block wrapper
-  * @private
-  */
+   * Main Block wrapper
+   * @private
+   */
   private _element: HTMLHeadingElement;
   private _block: any;
 
@@ -141,7 +143,7 @@ export default class Header implements BlockTool {
 
   /**
    * Check if data is valid
-   * 
+   *
    * @param {any} data - data to check
    * @returns {data is HeaderData}
    * @private
@@ -163,7 +165,7 @@ export default class Header implements BlockTool {
 
     if (this.isHeaderData(data)) {
       newData.text = data.text || '';
-  
+
       if (data.level !== undefined && !isNaN(parseInt(data.level.toString()))) {
         newData.level = parseInt(data.level.toString());
       }
@@ -191,12 +193,13 @@ export default class Header implements BlockTool {
    */
   renderSettings(): MenuConfig {
     // H1 — никаких настроек вообще
-    if (this._data.level === 1) {
-      return [];
-    }
+    if (this._config?.holdFirstHeader === true) {
+      if (this._data.level === 1) {
+        return [];
+      }
 
-    // H2/H3 — только переключатель уровней (без delete/move — они встроенные)
-    return this.levels
+      // H2/H3 — только переключатель уровней (без delete/move — они встроенные)
+      return this.levels
         .filter(level => level.number !== 1) // H1 нельзя выбрать из настроек
         .map(level => ({
           icon: level.svg,
@@ -206,6 +209,17 @@ export default class Header implements BlockTool {
           isActive: this.currentLevel.number === level.number,
           render: () => document.createElement('div')
         }));
+    } else {
+      return this.levels
+        .map(level => ({
+          icon: level.svg,
+          label: this.api.i18n.t(`Heading ${level.number}`),
+          onActivate: () => this.setLevel(level.number),
+          closeOnActivate: true,
+          isActive: this.currentLevel.number === level.number,
+          render: () => document.createElement('div')
+        }));
+    }
   }
 
   /**
@@ -215,7 +229,7 @@ export default class Header implements BlockTool {
    */
   setLevel(level: number): void {
     // Запрещаем смену уровня на H1 через настройки
-    if (level === 1) return;
+    if (this._config?.holdFirstHeader === true && level === 1) return;
 
     this.data = {
       level: level,
@@ -261,16 +275,6 @@ export default class Header implements BlockTool {
   }
 
   /**
-   * Allow Header to be converted to/from other blocks
-   */
-  static get conversionConfig() {
-    return {
-      export: 'text', // use 'text' property for other blocks
-      import: 'text', // fill 'text' property from other block's export string
-    };
-  }
-
-  /**
    * Sanitizer Rules
    */
   static get sanitize() {
@@ -298,7 +302,7 @@ export default class Header implements BlockTool {
   get data(): HeaderData {
     this._data.text = this._element.innerHTML;
     this._data.level = this.currentLevel.number;
-    
+
     return this._data;
   }
 
@@ -362,7 +366,8 @@ export default class Header implements BlockTool {
     /**
      * Create element for current Block's level
      */
-    const tag = document.createElement(this.currentLevel.tag) as HTMLHeadingElement;
+    const currentLevel = this.currentLevel;
+    const tag = document.createElement(currentLevel.tag) as HTMLHeadingElement;
 
     /**
      * Add text to block
@@ -378,11 +383,15 @@ export default class Header implements BlockTool {
      * Make tag editable
      */
     tag.contentEditable = this.readOnly ? 'false' : 'true';
-    tag.dataset['placeholder'] = this.api.i18n.t(this._config?.placeholder || '');
+    if (currentLevel.number === 1) {
+      tag.dataset['placeholder'] = this.api.i18n.t(this._config?.placeholder || '');
+    } else {
+      tag.dataset['placeholder'] = this.api.i18n.t(this._config?.placeholderLevel || '');
+    }
 
     // H1: блокируем Backspace в начале (чтобы не слить с предыдущим блоком)
     // и Enter (чтобы не создавал новую строку внутри H1)
-    if (this._data.level === 1) {
+    if (this._config?.holdFirstHeader === true && this._data.level === 1) {
       tag.addEventListener('keydown', (e: KeyboardEvent) => {
         if (e.key === 'Enter') {
           e.preventDefault();
@@ -537,7 +546,7 @@ export default class Header implements BlockTool {
       }
 
       // Запрещаем вставку как H1 (если вставили H1 — делаем H2)
-      if (level === 1) {
+      if (this._config?.holdFirstHeader === true && level === 1) {
         level = this._config?.levels?.find(l => l !== 1) ?? 2;
       }
 
@@ -557,6 +566,11 @@ export default class Header implements BlockTool {
    */
   static get toolbox() {
     return [
+      // {
+      //   icon: IconH1,
+      //   title: 'Heading 1',
+      //   data: { level: 1 },
+      // },
       {
         icon: IconH2,
         title: 'Heading 2',

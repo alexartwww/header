@@ -2,8 +2,8 @@ import { API, BlockTool, PasteEvent } from '@editorjs/editorjs';
 import { MenuConfig } from '@editorjs/editorjs/types/tools';
 
 /**
-* @description Tool's input and output data format
-*/
+ * @description Tool's input and output data format
+ */
 export interface HeaderData {
     /** Header's content */
     text: string;
@@ -20,6 +20,8 @@ export interface HeaderConfig {
     levels?: number[];
     /** Default level */
     defaultLevel?: number;
+    holdFirstHeader: boolean;
+    placeholderLevel?: string;
 }
 /**
  * @description Heading level information
@@ -67,28 +69,28 @@ export default class Header implements BlockTool {
      */
     /**
      * Editor.js API
-    * @private
-    */
+     * @private
+     */
     private api;
     /**
-    * Read-only mode flag
-    * @private
-    */
+     * Read-only mode flag
+     * @private
+     */
     private readOnly;
     /**
-    * Tool's settings passed from Editor
-    * @private
-    */
+     * Tool's settings passed from Editor
+     * @private
+     */
     private _config;
     /**
-    * Block's data
-    * @private
-    */
+     * Block's data
+     * @private
+     */
     private _data;
     /**
-    * Main Block wrapper
-    * @private
-    */
+     * Main Block wrapper
+     * @private
+     */
     private _element;
     private _block;
     constructor({ data, config, api, readOnly, block }: ConstructorArgs);
@@ -156,13 +158,6 @@ export default class Header implements BlockTool {
      * @public
      */
     save(toolsContent: HTMLHeadingElement): HeaderData;
-    /**
-     * Allow Header to be converted to/from other blocks
-     */
-    static get conversionConfig(): {
-        export: string;
-        import: string;
-    };
     /**
      * Sanitizer Rules
      */

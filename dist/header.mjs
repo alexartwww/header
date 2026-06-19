@@ -1,5 +1,5 @@
 (function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".ce-header{padding:.6em 0 3px;margin:0;line-height:1.25em;outline:none}.ce-header p,.ce-header div{padding:0!important;margin:0!important}")),document.head.appendChild(e)}}catch(n){console.error("vite-plugin-css-injected-by-js",n)}})();
-const u = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', h = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', c = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', g = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', v = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', p = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>';
+const g = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', c = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', u = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', v = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', p = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', f = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>';
 /**
  * Header block for the Editor.js.
  *
@@ -8,9 +8,9 @@ const u = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="
  * @license MIT
  * @version 2.0.0
  */
-class f {
-  constructor({ data: e, config: t, api: r, readOnly: n, block: s }) {
-    this.api = r, this.readOnly = n, this._block = s, this._config = t ?? null, this._data = this.normalizeData(e), this._element = this.getTag();
+class m {
+  constructor({ data: t, config: e, api: n, readOnly: r, block: a }) {
+    this.api = n, this.readOnly = r, this._block = a, this._config = e ?? null, this._data = this.normalizeData(t), this._element = this.getTag();
   }
   get _CSS() {
     return {
@@ -20,13 +20,13 @@ class f {
   }
   /**
    * Check if data is valid
-   * 
+   *
    * @param {any} data - data to check
    * @returns {data is HeaderData}
    * @private
    */
-  isHeaderData(e) {
-    return e.text !== void 0;
+  isHeaderData(t) {
+    return t.text !== void 0;
   }
   /**
    * Normalize input data
@@ -36,9 +36,9 @@ class f {
    * @returns {HeaderData}
    * @private
    */
-  normalizeData(e) {
-    const t = { text: "", level: this.defaultLevel.number };
-    return this.isHeaderData(e) && (t.text = e.text || "", e.level !== void 0 && !isNaN(parseInt(e.level.toString())) && (t.level = parseInt(e.level.toString()))), t;
+  normalizeData(t) {
+    const e = { text: "", level: this.defaultLevel.number };
+    return this.isHeaderData(t) && (e.text = t.text || "", t.level !== void 0 && !isNaN(parseInt(t.level.toString())) && (e.level = parseInt(t.level.toString()))), e;
   }
   /**
    * Return Tool's view
@@ -57,7 +57,15 @@ class f {
    * Для H2/H3 показываем только переключатель уровней.
    */
   renderSettings() {
-    return this._data.level === 1 ? [] : this.levels.filter((e) => e.number !== 1).map((e) => ({
+    var t;
+    return ((t = this._config) == null ? void 0 : t.holdFirstHeader) === !0 ? this._data.level === 1 ? [] : this.levels.filter((e) => e.number !== 1).map((e) => ({
+      icon: e.svg,
+      label: this.api.i18n.t(`Heading ${e.number}`),
+      onActivate: () => this.setLevel(e.number),
+      closeOnActivate: !0,
+      isActive: this.currentLevel.number === e.number,
+      render: () => document.createElement("div")
+    })) : this.levels.map((e) => ({
       icon: e.svg,
       label: this.api.i18n.t(`Heading ${e.number}`),
       onActivate: () => this.setLevel(e.number),
@@ -71,9 +79,10 @@ class f {
    *
    * @param {number} level - level to set
    */
-  setLevel(e) {
-    e !== 1 && (this.data = {
-      level: e,
+  setLevel(t) {
+    var e;
+    ((e = this._config) == null ? void 0 : e.holdFirstHeader) === !0 && t === 1 || (this.data = {
+      level: t,
       text: this.data.text
     });
   }
@@ -84,8 +93,8 @@ class f {
    * @param {HeaderData} data - saved data to merger with current block
    * @public
    */
-  merge(e) {
-    this._element.insertAdjacentHTML("beforeend", e.text);
+  merge(t) {
+    this._element.insertAdjacentHTML("beforeend", t.text);
   }
   /**
    * Validate Text block data:
@@ -95,8 +104,8 @@ class f {
    * @returns {boolean} false if saved data is not correct, otherwise true
    * @public
    */
-  validate(e) {
-    return e.text.trim() !== "";
+  validate(t) {
+    return t.text.trim() !== "";
   }
   /**
    * Extract Tool's data from the view
@@ -105,21 +114,10 @@ class f {
    * @returns {HeaderData} - saved data
    * @public
    */
-  save(e) {
+  save(t) {
     return {
-      text: e.innerHTML,
+      text: t.innerHTML,
       level: this.currentLevel.number
-    };
-  }
-  /**
-   * Allow Header to be converted to/from other blocks
-   */
-  static get conversionConfig() {
-    return {
-      export: "text",
-      // use 'text' property for other blocks
-      import: "text"
-      // fill 'text' property from other block's export string
     };
   }
   /**
@@ -156,12 +154,12 @@ class f {
    * @param {HeaderData} data — data to set
    * @private
    */
-  set data(e) {
-    if (this._data = this.normalizeData(e), e.level !== void 0 && this._element.parentNode) {
-      const t = this.getTag();
-      t.innerHTML = this._element.innerHTML, this._element.parentNode.replaceChild(t, this._element), this._element = t;
+  set data(t) {
+    if (this._data = this.normalizeData(t), t.level !== void 0 && this._element.parentNode) {
+      const e = this.getTag();
+      e.innerHTML = this._element.innerHTML, this._element.parentNode.replaceChild(e, this._element), this._element = e;
     }
-    e.text !== void 0 && (this._element.innerHTML = this._data.text || "");
+    t.text !== void 0 && (this._element.innerHTML = this._data.text || "");
   }
   /**
    * Get tag for target level
@@ -170,14 +168,14 @@ class f {
    * @returns {HTMLElement}
    */
   getTag() {
-    var t;
-    const e = document.createElement(this.currentLevel.tag);
-    return e.innerHTML = this._data.text || "", e.classList.add(this._CSS.wrapper), e.contentEditable = this.readOnly ? "false" : "true", e.dataset.placeholder = this.api.i18n.t(((t = this._config) == null ? void 0 : t.placeholder) || ""), this._data.level === 1 && e.addEventListener("keydown", (r) => {
-      if (r.key === "Enter" && (r.preventDefault(), r.stopPropagation(), this.api.caret.setToNextBlock("start")), r.key === "Backspace") {
-        const n = window.getSelection();
-        if (n && n.rangeCount) {
-          const s = n.getRangeAt(0);
-          s.startOffset === 0 && s.collapsed && (r.preventDefault(), r.stopPropagation());
+    var n, r, a;
+    const t = this.currentLevel, e = document.createElement(t.tag);
+    return e.innerHTML = this._data.text || "", e.classList.add(this._CSS.wrapper), e.contentEditable = this.readOnly ? "false" : "true", t.number === 1 ? e.dataset.placeholder = this.api.i18n.t(((n = this._config) == null ? void 0 : n.placeholder) || "") : e.dataset.placeholder = this.api.i18n.t(((r = this._config) == null ? void 0 : r.placeholderLevel) || ""), ((a = this._config) == null ? void 0 : a.holdFirstHeader) === !0 && this._data.level === 1 && e.addEventListener("keydown", (s) => {
+      if (s.key === "Enter" && (s.preventDefault(), s.stopPropagation(), this.api.caret.setToNextBlock("start")), s.key === "Backspace") {
+        const l = window.getSelection();
+        if (l && l.rangeCount) {
+          const o = l.getRangeAt(0);
+          o.startOffset === 0 && o.collapsed && (s.preventDefault(), s.stopPropagation());
         }
       }
     }), e;
@@ -188,8 +186,8 @@ class f {
    * @returns {level}
    */
   get currentLevel() {
-    let e = this.levels.find((t) => t.number === this._data.level);
-    return e || (e = this.defaultLevel), e;
+    let t = this.levels.find((e) => e.number === this._data.level);
+    return t || (t = this.defaultLevel), t;
   }
   /**
    * Return default level
@@ -197,14 +195,14 @@ class f {
    * @returns {level}
    */
   get defaultLevel() {
-    var e;
-    if ((e = this._config) != null && e.defaultLevel) {
-      const t = this.levels.find((r) => {
-        var n;
-        return r.number === ((n = this._config) == null ? void 0 : n.defaultLevel);
+    var t;
+    if ((t = this._config) != null && t.defaultLevel) {
+      const e = this.levels.find((n) => {
+        var r;
+        return n.number === ((r = this._config) == null ? void 0 : r.defaultLevel);
       });
-      if (t)
-        return t;
+      if (e)
+        return e;
       console.warn("(ง'̀-'́)ง Heading Tool: the default level specified was not found in available levels");
     }
     return this.levels[1];
@@ -221,56 +219,56 @@ class f {
    * @returns {level[]}
    */
   get levels() {
-    var t;
-    const e = [
+    var e;
+    const t = [
       {
         number: 1,
         tag: "H1",
-        svg: u
+        svg: g
       },
       {
         number: 2,
         tag: "H2",
-        svg: h
+        svg: c
       },
       {
         number: 3,
         tag: "H3",
-        svg: c
+        svg: u
       },
       {
         number: 4,
         tag: "H4",
-        svg: g
+        svg: v
       },
       {
         number: 5,
         tag: "H5",
-        svg: v
+        svg: p
       },
       {
         number: 6,
         tag: "H6",
-        svg: p
+        svg: f
       }
     ];
-    return (t = this._config) != null && t.levels ? e.filter(
-      (r) => {
-        var n;
-        return (n = this._config) == null ? void 0 : n.levels.includes(r.number);
+    return (e = this._config) != null && e.levels ? t.filter(
+      (n) => {
+        var r;
+        return (r = this._config) == null ? void 0 : r.levels.includes(n.number);
       }
-    ) : e;
+    ) : t;
   }
   /**
    * Handle H1-H6 tags on paste to substitute it with header Tool
    *
    * @param {PasteEvent} event - event with pasted content
    */
-  onPaste(e) {
-    var r, n, s, l;
-    const t = e.detail;
-    if ("data" in t) {
-      const o = t.data;
+  onPaste(t) {
+    var n, r, a, s, l;
+    const e = t.detail;
+    if ("data" in e) {
+      const o = e.data;
       let i = this.defaultLevel.number;
       switch (o.tagName) {
         case "H1":
@@ -292,7 +290,7 @@ class f {
           i = 6;
           break;
       }
-      (r = this._config) != null && r.levels && (i = (n = this._config) == null ? void 0 : n.levels.reduce((a, d) => Math.abs(d - i) < Math.abs(a - i) ? d : a)), i === 1 && (i = ((l = (s = this._config) == null ? void 0 : s.levels) == null ? void 0 : l.find((a) => a !== 1)) ?? 2), this.data = { level: i, text: o.innerHTML };
+      (n = this._config) != null && n.levels && (i = (r = this._config) == null ? void 0 : r.levels.reduce((h, d) => Math.abs(d - i) < Math.abs(h - i) ? d : h)), ((a = this._config) == null ? void 0 : a.holdFirstHeader) === !0 && i === 1 && (i = ((l = (s = this._config) == null ? void 0 : s.levels) == null ? void 0 : l.find((h) => h !== 1)) ?? 2), this.data = { level: i, text: o.innerHTML };
     }
   }
   static get pasteConfig() {
@@ -306,13 +304,18 @@ class f {
    */
   static get toolbox() {
     return [
+      // {
+      //   icon: IconH1,
+      //   title: 'Heading 1',
+      //   data: { level: 1 },
+      // },
       {
-        icon: h,
+        icon: c,
         title: "Heading 2",
         data: { level: 2 }
       },
       {
-        icon: c,
+        icon: u,
         title: "Heading 3",
         data: { level: 3 }
       }
@@ -320,5 +323,5 @@ class f {
   }
 }
 export {
-  f as default
+  m as default
 };
