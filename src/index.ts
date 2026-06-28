@@ -6,7 +6,8 @@ import './index.css';
 import { IconH1, IconH2, IconH3, IconH4, IconH5, IconH6, IconHeading } from '@codexteam/icons';
 import { API, BlockTool, PasteEvent } from '@editorjs/editorjs';
 import type { MenuConfig } from '@editorjs/editorjs/types/tools';
-import {ConversionConfig} from '../../../types';
+import {ConversionConfig, SanitizerConfig} from '../../../types';
+// import I18n from '../../../src/components/i18n';
 
 /**
  * @description Tool's input and output data format
@@ -28,8 +29,6 @@ export interface HeaderConfig {
   levels?: number[];
   /** Default level */
   defaultLevel?: number;
-  holdFirstHeader: boolean;
-  placeholderLevel?: string;
 }
 
 /**
@@ -133,6 +132,40 @@ export default class Header implements BlockTool {
      * @private
      */
     this._element = this.getTag();
+    // const observer = new MutationObserver((mutations) => {
+    //   mutations.forEach((mutation) => {
+    //     mutation.addedNodes.forEach((node) => {
+    //       if (node.nodeName === 'BR') {
+    //         console.log('BR добавлен!', node);
+    //         console.trace(); // покажет стек вызовов — кто вставил
+    //       }
+    //     });
+    //   });
+    // });
+    //
+    // observer.observe(this._element, { childList: true, subtree: true });
+  }
+
+  /**
+   * Check if text content is empty and set empty string to inner html.
+   * We need this because some browsers (e.g. Safari) insert <br> into empty contenteditanle elements
+   *
+   * @param {KeyboardEvent} e - key up event
+   */
+  onKeyUp(e: KeyboardEvent): void {
+    // if (e.code !== 'Backspace' && e.code !== 'Delete') {
+    //   return;
+    // }
+
+    if (!this._element) {
+      return;
+    }
+
+    const { textContent } = this._element;
+
+    if (textContent.replace(/<br\s*\/?>/gi, '').trim() === '') {
+      this._element.innerHTML = '';
+    }
   }
 
   private get _CSS() {
@@ -178,8 +211,7 @@ export default class Header implements BlockTool {
   /**
    * Return Tool's view
    *
-   * @returns {HTMLHeadingElement}
-   * @public
+   * @returns {HTMLDivElement}
    */
   render(): HTMLHeadingElement {
     return this._element;
@@ -194,7 +226,7 @@ export default class Header implements BlockTool {
    */
   renderSettings(): MenuConfig {
     // H1 — никаких настроек вообще
-    if (this._config?.holdFirstHeader === true) {
+    if (this._config.holdFirstHeader === true) {
       if (this._data.level === 1) {
         return [];
       }
@@ -241,7 +273,7 @@ export default class Header implements BlockTool {
    */
   setLevel(level: number): void {
     // Запрещаем смену уровня на H1 через настройки
-    if (this._config?.holdFirstHeader === true && level === 1) return;
+    if (this._config.holdFirstHeader === true && level === 1) return;
 
     this.data = {
       level: level,
@@ -289,10 +321,11 @@ export default class Header implements BlockTool {
   /**
    * Sanitizer Rules
    */
-  static get sanitize() {
+  static get sanitize(): SanitizerConfig {
     return {
-      level: false,
-      text: {},
+      text: {
+        br: false,
+      },
     };
   }
 
@@ -384,6 +417,7 @@ export default class Header implements BlockTool {
     /**
      * Add text to block
      */
+    console.log('text', this._data.text);
     tag.innerHTML = this._data.text || '';
 
     /**
@@ -395,15 +429,69 @@ export default class Header implements BlockTool {
      * Make tag editable
      */
     tag.contentEditable = this.readOnly ? 'false' : 'true';
+
+    if (!this.readOnly) {
+      tag.addEventListener('keyup', this.onKeyUp);
+    }
+
     if (currentLevel.number === 1) {
       tag.dataset['placeholder'] = this.api.i18n.t(this._config?.placeholder || '');
     } else {
       tag.dataset['placeholder'] = this.api.i18n.t(this._config?.placeholderLevel || '');
     }
+    // Ограничение максимальной длины заголовка
+    const maxLength = (currentLevel.number === 1) ? this._config?.maxLength : this._config?.maxLengthLevel;
+    if (maxLength) {
+      tag.addEventListener('beforeinput', (e: InputEvent) => {
+        const currentLength = tag.textContent?.length || 0;
 
+        // Разрешаем удаление и навигацию всегда
+        const isDeletion = e.inputType.startsWith('delete');
+        if (isDeletion) {
+          return;
+        }
+
+        // Если уже достигли лимита — блокируем ввод нового текста
+        if (currentLength >= maxLength) {
+          e.preventDefault();
+        }
+      });
+
+      // Защита от вставки длинного текста через paste
+      tag.addEventListener('paste', (e: ClipboardEvent) => {
+        e.preventDefault();
+
+        const pasteText = e.clipboardData?.getData('text/plain') || '';
+        const currentLength = tag.textContent?.length || 0;
+        const allowedLength = maxLength - currentLength;
+
+        if (allowedLength <= 0) {
+          return;
+        }
+
+        const textToInsert = pasteText.slice(0, allowedLength);
+
+        const selection = window.getSelection();
+        if (!selection || selection.rangeCount === 0) {
+          return;
+        }
+
+        const range = selection.getRangeAt(0);
+        range.deleteContents();
+
+        const textNode = document.createTextNode(textToInsert);
+        range.insertNode(textNode);
+
+        // переносим каретку в конец вставленного текста
+        range.setStartAfter(textNode);
+        range.setEndAfter(textNode);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      });
+    }
     // H1: блокируем Backspace в начале (чтобы не слить с предыдущим блоком)
     // и Enter (чтобы не создавал новую строку внутри H1)
-    if (this._config?.holdFirstHeader === true && this._data.level === 1) {
+    if (this._config.holdFirstHeader === true && this._data.level === 1) {
       tag.addEventListener('keydown', (e: KeyboardEvent) => {
         if (e.key === 'Enter') {
           e.preventDefault();
@@ -558,7 +646,7 @@ export default class Header implements BlockTool {
       }
 
       // Запрещаем вставку как H1 (если вставили H1 — делаем H2)
-      if (this._config?.holdFirstHeader === true && level === 1) {
+      if (this._config.holdFirstHeader === true && level === 1) {
         level = this._config?.levels?.find(l => l !== 1) ?? 2;
       }
 
@@ -580,7 +668,7 @@ export default class Header implements BlockTool {
     return [
       // {
       //   icon: IconH1,
-      //   title: 'Heading 1',
+      //   title: I18n.t('tools.header', 'Heading 1'),
       //   data: { level: 1 },
       // },
       {
