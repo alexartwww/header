@@ -1,5 +1,5 @@
 (function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".ce-header{padding:.6em 0 3px;margin:0;line-height:1.25em;outline:none}.ce-header p,.ce-header div{padding:0!important;margin:0!important}")),document.head.appendChild(e)}}catch(n){console.error("vite-plugin-css-injected-by-js",n)}})();
-const x = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', L = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', w = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', k = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', M = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', C = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>';
+const k = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', w = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', x = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', M = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', C = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', b = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>';
 /**
  * Header block for the Editor.js.
  *
@@ -8,9 +8,9 @@ const x = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="
  * @license MIT
  * @version 2.0.0
  */
-class _ {
-  constructor({ data: e, config: t, api: a, readOnly: s, block: d }) {
-    this.api = a, this.readOnly = s, this._block = d, this._config = t ?? null, this._data = this.normalizeData(e), this._element = this.getTag();
+class H {
+  constructor({ data: e, config: t, api: a, readOnly: r, block: d }) {
+    this.api = a, this.readOnly = r, this._block = d, this._config = t ?? null, this._data = this.normalizeData(e), this._element = this.getTag();
   }
   /**
    * Check if text content is empty and set empty string to inner html.
@@ -190,41 +190,31 @@ class _ {
    * @returns {HTMLElement}
    */
   getTag() {
-    var s, d, v, p;
+    var r, d, g, u;
     const e = this.currentLevel, t = document.createElement(e.tag);
-    t.innerHTML = this._data.text || "", t.classList.add(this._CSS.wrapper), t.contentEditable = this.readOnly ? "false" : "true", this.readOnly || t.addEventListener("keyup", this.onKeyUp), e.number === 1 ? t.dataset.placeholder = this.api.i18n.t(((s = this._config) == null ? void 0 : s.placeholder) || "") : t.dataset.placeholder = this.api.i18n.t(((d = this._config) == null ? void 0 : d.placeholderLevel) || "");
-    const a = e.number === 1 ? (v = this._config) == null ? void 0 : v.maxLength : (p = this._config) == null ? void 0 : p.maxLengthLevel;
-    return a && !this.readOnly && (t.addEventListener("paste", (r) => {
-      var f, m;
-      r.preventDefault();
-      const o = ((f = r.clipboardData) == null ? void 0 : f.getData("text/plain")) || "", n = window.getSelection(), i = n && !n.isCollapsed ? n.toString().length : 0, c = (((m = t.textContent) == null ? void 0 : m.length) || 0) - i, g = Math.max(0, a - c);
-      if (g <= 0)
+    t.innerHTML = this._data.text || "", t.classList.add(this._CSS.wrapper), t.contentEditable = this.readOnly ? "false" : "true", this.readOnly || t.addEventListener("keyup", this.onKeyUp), e.number === 1 ? t.dataset.placeholder = this.api.i18n.t(((r = this._config) == null ? void 0 : r.placeholder) || "") : t.dataset.placeholder = this.api.i18n.t(((d = this._config) == null ? void 0 : d.placeholderLevel) || "");
+    const a = e.number === 1 ? (g = this._config) == null ? void 0 : g.maxLength : (u = this._config) == null ? void 0 : u.maxLengthLevel;
+    return a && t.addEventListener("paste", (i) => {
+      var p, m, L;
+      const h = ((p = i.clipboardData) == null ? void 0 : p.getData("text/html")) || "";
+      if (/<h[1-6]/i.test(h))
         return;
-      const l = o.slice(0, g);
-      if (!l)
+      const l = ((m = i.clipboardData) == null ? void 0 : m.getData("text/plain")) || "", n = ((L = t.textContent) == null ? void 0 : L.length) || 0, v = a - n;
+      if (i.preventDefault(), v <= 0)
         return;
-      const h = n == null ? void 0 : n.getRangeAt(0);
-      if (!h)
+      const f = l.slice(0, v), s = window.getSelection();
+      if (!s || s.rangeCount === 0)
         return;
-      h.deleteContents();
-      const u = document.createTextNode(l);
-      h.insertNode(u), h.setStartAfter(u), h.setEndAfter(u), n == null || n.removeAllRanges(), n == null || n.addRange(h);
-    }), t.addEventListener("beforeinput", (r) => {
-      var l;
-      if (r.inputType.startsWith("delete") || r.inputType === "insertFromPaste")
-        return;
-      const o = window.getSelection(), n = o && !o.isCollapsed ? o.toString().length : 0, i = (((l = t.textContent) == null ? void 0 : l.length) || 0) - n, c = a - i;
-      if (c <= 0) {
-        r.preventDefault();
-        return;
-      }
-      (r.data || "").length > c && r.preventDefault();
-    })), this._config.holdFirstHeader === !0 && this._data.level === 1 && t.addEventListener("keydown", (r) => {
-      if (r.key === "Enter" && (r.preventDefault(), r.stopPropagation(), this.api.caret.setToNextBlock("start")), r.key === "Backspace") {
-        const o = window.getSelection();
-        if (o && o.rangeCount) {
-          const n = o.getRangeAt(0);
-          n.startOffset === 0 && n.collapsed && (r.preventDefault(), r.stopPropagation());
+      const o = s.getRangeAt(0);
+      o.deleteContents();
+      const c = document.createTextNode(f);
+      o.insertNode(c), o.setStartAfter(c), o.setEndAfter(c), s.removeAllRanges(), s.addRange(o);
+    }), this._config.holdFirstHeader === !0 && this._data.level === 1 && t.addEventListener("keydown", (i) => {
+      if (i.key === "Enter" && (i.preventDefault(), i.stopPropagation(), this.api.caret.setToNextBlock("start")), i.key === "Backspace") {
+        const h = window.getSelection();
+        if (h && h.rangeCount) {
+          const l = h.getRangeAt(0);
+          l.startOffset === 0 && l.collapsed && (i.preventDefault(), i.stopPropagation());
         }
       }
     }), t;
@@ -247,8 +237,8 @@ class _ {
     var e;
     if ((e = this._config) != null && e.defaultLevel) {
       const t = this.levels.find((a) => {
-        var s;
-        return a.number === ((s = this._config) == null ? void 0 : s.defaultLevel);
+        var r;
+        return a.number === ((r = this._config) == null ? void 0 : r.defaultLevel);
       });
       if (t)
         return t;
@@ -273,38 +263,38 @@ class _ {
       {
         number: 1,
         tag: "H1",
-        svg: x
+        svg: k
       },
       {
         number: 2,
         tag: "H2",
-        svg: L
+        svg: w
       },
       {
         number: 3,
         tag: "H3",
-        svg: w
+        svg: x
       },
       {
         number: 4,
         tag: "H4",
-        svg: k
+        svg: M
       },
       {
         number: 5,
         tag: "H5",
-        svg: M
+        svg: C
       },
       {
         number: 6,
         tag: "H6",
-        svg: C
+        svg: b
       }
     ];
     return (t = this._config) != null && t.levels ? e.filter(
       (a) => {
-        var s;
-        return (s = this._config) == null ? void 0 : s.levels.includes(a.number);
+        var r;
+        return (r = this._config) == null ? void 0 : r.levels.includes(a.number);
       }
     ) : e;
   }
@@ -314,39 +304,39 @@ class _ {
    * @param {PasteEvent} event - event with pasted content
    */
   onPaste(e) {
-    var a, s, d, v, p, r, o;
+    var a, r, d, g, u, i, h;
     const t = e.detail;
     if ("data" in t) {
-      const n = t.data;
-      let i = this.defaultLevel.number;
-      switch (n.tagName) {
+      const l = t.data;
+      let n = this.defaultLevel.number;
+      switch (l.tagName) {
         case "H1":
-          i = 1;
+          n = 1;
           break;
         case "H2":
-          i = 2;
+          n = 2;
           break;
         case "H3":
-          i = 3;
+          n = 3;
           break;
         case "H4":
-          i = 4;
+          n = 4;
           break;
         case "H5":
-          i = 5;
+          n = 5;
           break;
         case "H6":
-          i = 6;
+          n = 6;
           break;
       }
-      (a = this._config) != null && a.levels && (i = this._config.levels.reduce((l, h) => Math.abs(h - i) < Math.abs(l - i) ? h : l)), this._config.holdFirstHeader === !0 && i === 1 && (i = ((d = (s = this._config) == null ? void 0 : s.levels) == null ? void 0 : d.find((l) => l !== 1)) ?? 2);
-      const c = i === 1 ? (v = this._config) == null ? void 0 : v.maxLength : (p = this._config) == null ? void 0 : p.maxLengthLevel;
-      let g = n.innerHTML || n.textContent || "";
-      if (c) {
-        const l = ((o = (r = this._element) == null ? void 0 : r.textContent) == null ? void 0 : o.length) || 0, h = Math.max(0, c - l), u = n.textContent || "";
-        u.length > h && (g = u.slice(0, h));
+      (a = this._config) != null && a.levels && (n = this._config.levels.reduce((s, o) => Math.abs(o - n) < Math.abs(s - n) ? o : s)), this._config.holdFirstHeader === !0 && n === 1 && (n = ((d = (r = this._config) == null ? void 0 : r.levels) == null ? void 0 : d.find((s) => s !== 1)) ?? 2);
+      const v = n === 1 ? (g = this._config) == null ? void 0 : g.maxLength : (u = this._config) == null ? void 0 : u.maxLengthLevel;
+      let f = l.innerHTML || l.textContent || "";
+      if (v) {
+        const s = ((h = (i = this._element) == null ? void 0 : i.textContent) == null ? void 0 : h.length) || 0, o = Math.max(0, v - s), c = l.textContent || "";
+        c.length > o && (f = c.slice(0, o));
       }
-      this.data = { level: i, text: g };
+      this.data = { level: n, text: f };
     }
   }
   static get pasteConfig() {
@@ -366,12 +356,12 @@ class _ {
       //   data: { level: 1 },
       // },
       {
-        icon: L,
+        icon: w,
         title: "Heading 2",
         data: { level: 2 }
       },
       {
-        icon: w,
+        icon: x,
         title: "Heading 3",
         data: { level: 3 }
       }
@@ -379,5 +369,5 @@ class _ {
   }
 }
 export {
-  _ as default
+  H as default
 };
