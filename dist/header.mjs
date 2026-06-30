@@ -1,5 +1,5 @@
 (function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".ce-header{padding:.6em 0 3px;margin:0;line-height:1.25em;outline:none}.ce-header p,.ce-header div{padding:0!important;margin:0!important}")),document.head.appendChild(e)}}catch(n){console.error("vite-plugin-css-injected-by-js",n)}})();
-const w = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', f = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', m = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', k = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', M = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', x = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>';
+const x = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19 17V10.2135C19 10.1287 18.9011 10.0824 18.836 10.1367L16 12.5"/></svg>', L = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10 19 9.5 19 12C19 13.9771 16.0684 13.9997 16.0012 16.8981C15.9999 16.9533 16.0448 17 16.1 17L19.3 17"/></svg>', w = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 11C16 10.5 16.8323 10 17.6 10C18.3677 10 19.5 10.311 19.5 11.5C19.5 12.5315 18.7474 12.9022 18.548 12.9823C18.5378 12.9864 18.5395 13.0047 18.5503 13.0063C18.8115 13.0456 20 13.3065 20 14.8C20 16 19.5 17 17.8 17C17.8 17 16 17 16 16.3"/></svg>', k = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M18 10L15.2834 14.8511C15.246 14.9178 15.294 15 15.3704 15C16.8489 15 18.7561 15 20.2 15M19 17C19 15.7187 19 14.8813 19 13.6"/></svg>', M = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 15.9C16 15.9 16.3768 17 17.8 17C19.5 17 20 15.6199 20 14.7C20 12.7323 17.6745 12.0486 16.1635 12.9894C16.094 13.0327 16 12.9846 16 12.9027V10.1C16 10.0448 16.0448 10 16.1 10H19.8"/></svg>', C = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 7L6 12M6 17L6 12M6 12L12 12M12 7V12M12 17L12 12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M19.5 10C16.5 10.5 16 13.3285 16 15M16 15V15C16 16.1046 16.8954 17 18 17H18.3246C19.3251 17 20.3191 16.3492 20.2522 15.3509C20.0612 12.4958 16 12.6611 16 15Z"/></svg>';
 /**
  * Header block for the Editor.js.
  *
@@ -8,9 +8,9 @@ const w = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="
  * @license MIT
  * @version 2.0.0
  */
-class C {
-  constructor({ data: e, config: t, api: i, readOnly: r, block: o }) {
-    this.api = i, this.readOnly = r, this._block = o, this._config = t ?? null, this._data = this.normalizeData(e), this._element = this.getTag();
+class _ {
+  constructor({ data: e, config: t, api: a, readOnly: s, block: d }) {
+    this.api = a, this.readOnly = s, this._block = d, this._config = t ?? null, this._data = this.normalizeData(e), this._element = this.getTag();
   }
   /**
    * Check if text content is empty and set empty string to inner html.
@@ -190,33 +190,41 @@ class C {
    * @returns {HTMLElement}
    */
   getTag() {
-    var r, o, l, d;
+    var s, d, v, p;
     const e = this.currentLevel, t = document.createElement(e.tag);
-    console.log("text", this._data.text), t.innerHTML = this._data.text || "", t.classList.add(this._CSS.wrapper), t.contentEditable = this.readOnly ? "false" : "true", this.readOnly || t.addEventListener("keyup", this.onKeyUp), e.number === 1 ? t.dataset.placeholder = this.api.i18n.t(((r = this._config) == null ? void 0 : r.placeholder) || "") : t.dataset.placeholder = this.api.i18n.t(((o = this._config) == null ? void 0 : o.placeholderLevel) || "");
-    const i = e.number === 1 ? (l = this._config) == null ? void 0 : l.maxLength : (d = this._config) == null ? void 0 : d.maxLengthLevel;
-    return i && (t.addEventListener("beforeinput", (n) => {
-      var h;
-      const s = ((h = t.textContent) == null ? void 0 : h.length) || 0;
-      n.inputType.startsWith("delete") || s >= i && n.preventDefault();
-    }), t.addEventListener("paste", (n) => {
-      var v, p;
-      n.preventDefault();
-      const s = ((v = n.clipboardData) == null ? void 0 : v.getData("text/plain")) || "", a = ((p = t.textContent) == null ? void 0 : p.length) || 0, h = i - a;
-      if (h <= 0)
+    t.innerHTML = this._data.text || "", t.classList.add(this._CSS.wrapper), t.contentEditable = this.readOnly ? "false" : "true", this.readOnly || t.addEventListener("keyup", this.onKeyUp), e.number === 1 ? t.dataset.placeholder = this.api.i18n.t(((s = this._config) == null ? void 0 : s.placeholder) || "") : t.dataset.placeholder = this.api.i18n.t(((d = this._config) == null ? void 0 : d.placeholderLevel) || "");
+    const a = e.number === 1 ? (v = this._config) == null ? void 0 : v.maxLength : (p = this._config) == null ? void 0 : p.maxLengthLevel;
+    return a && !this.readOnly && (t.addEventListener("paste", (r) => {
+      var f, m;
+      r.preventDefault();
+      const o = ((f = r.clipboardData) == null ? void 0 : f.getData("text/plain")) || "", n = window.getSelection(), i = n && !n.isCollapsed ? n.toString().length : 0, c = (((m = t.textContent) == null ? void 0 : m.length) || 0) - i, g = Math.max(0, a - c);
+      if (g <= 0)
         return;
-      const L = s.slice(0, h), c = window.getSelection();
-      if (!c || c.rangeCount === 0)
+      const l = o.slice(0, g);
+      if (!l)
         return;
-      const u = c.getRangeAt(0);
-      u.deleteContents();
-      const g = document.createTextNode(L);
-      u.insertNode(g), u.setStartAfter(g), u.setEndAfter(g), c.removeAllRanges(), c.addRange(u);
-    })), this._config.holdFirstHeader === !0 && this._data.level === 1 && t.addEventListener("keydown", (n) => {
-      if (n.key === "Enter" && (n.preventDefault(), n.stopPropagation(), this.api.caret.setToNextBlock("start")), n.key === "Backspace") {
-        const s = window.getSelection();
-        if (s && s.rangeCount) {
-          const a = s.getRangeAt(0);
-          a.startOffset === 0 && a.collapsed && (n.preventDefault(), n.stopPropagation());
+      const h = n == null ? void 0 : n.getRangeAt(0);
+      if (!h)
+        return;
+      h.deleteContents();
+      const u = document.createTextNode(l);
+      h.insertNode(u), h.setStartAfter(u), h.setEndAfter(u), n == null || n.removeAllRanges(), n == null || n.addRange(h);
+    }), t.addEventListener("beforeinput", (r) => {
+      var l;
+      if (r.inputType.startsWith("delete") || r.inputType === "insertFromPaste")
+        return;
+      const o = window.getSelection(), n = o && !o.isCollapsed ? o.toString().length : 0, i = (((l = t.textContent) == null ? void 0 : l.length) || 0) - n, c = a - i;
+      if (c <= 0) {
+        r.preventDefault();
+        return;
+      }
+      (r.data || "").length > c && r.preventDefault();
+    })), this._config.holdFirstHeader === !0 && this._data.level === 1 && t.addEventListener("keydown", (r) => {
+      if (r.key === "Enter" && (r.preventDefault(), r.stopPropagation(), this.api.caret.setToNextBlock("start")), r.key === "Backspace") {
+        const o = window.getSelection();
+        if (o && o.rangeCount) {
+          const n = o.getRangeAt(0);
+          n.startOffset === 0 && n.collapsed && (r.preventDefault(), r.stopPropagation());
         }
       }
     }), t;
@@ -238,9 +246,9 @@ class C {
   get defaultLevel() {
     var e;
     if ((e = this._config) != null && e.defaultLevel) {
-      const t = this.levels.find((i) => {
-        var r;
-        return i.number === ((r = this._config) == null ? void 0 : r.defaultLevel);
+      const t = this.levels.find((a) => {
+        var s;
+        return a.number === ((s = this._config) == null ? void 0 : s.defaultLevel);
       });
       if (t)
         return t;
@@ -265,17 +273,17 @@ class C {
       {
         number: 1,
         tag: "H1",
-        svg: w
+        svg: x
       },
       {
         number: 2,
         tag: "H2",
-        svg: f
+        svg: L
       },
       {
         number: 3,
         tag: "H3",
-        svg: m
+        svg: w
       },
       {
         number: 4,
@@ -290,13 +298,13 @@ class C {
       {
         number: 6,
         tag: "H6",
-        svg: x
+        svg: C
       }
     ];
     return (t = this._config) != null && t.levels ? e.filter(
-      (i) => {
-        var r;
-        return (r = this._config) == null ? void 0 : r.levels.includes(i.number);
+      (a) => {
+        var s;
+        return (s = this._config) == null ? void 0 : s.levels.includes(a.number);
       }
     ) : e;
   }
@@ -306,32 +314,39 @@ class C {
    * @param {PasteEvent} event - event with pasted content
    */
   onPaste(e) {
-    var i, r, o, l;
+    var a, s, d, v, p, r, o;
     const t = e.detail;
     if ("data" in t) {
-      const d = t.data;
-      let n = this.defaultLevel.number;
-      switch (d.tagName) {
+      const n = t.data;
+      let i = this.defaultLevel.number;
+      switch (n.tagName) {
         case "H1":
-          n = 1;
+          i = 1;
           break;
         case "H2":
-          n = 2;
+          i = 2;
           break;
         case "H3":
-          n = 3;
+          i = 3;
           break;
         case "H4":
-          n = 4;
+          i = 4;
           break;
         case "H5":
-          n = 5;
+          i = 5;
           break;
         case "H6":
-          n = 6;
+          i = 6;
           break;
       }
-      (i = this._config) != null && i.levels && (n = (r = this._config) == null ? void 0 : r.levels.reduce((s, a) => Math.abs(a - n) < Math.abs(s - n) ? a : s)), this._config.holdFirstHeader === !0 && n === 1 && (n = ((l = (o = this._config) == null ? void 0 : o.levels) == null ? void 0 : l.find((s) => s !== 1)) ?? 2), this.data = { level: n, text: d.innerHTML };
+      (a = this._config) != null && a.levels && (i = this._config.levels.reduce((l, h) => Math.abs(h - i) < Math.abs(l - i) ? h : l)), this._config.holdFirstHeader === !0 && i === 1 && (i = ((d = (s = this._config) == null ? void 0 : s.levels) == null ? void 0 : d.find((l) => l !== 1)) ?? 2);
+      const c = i === 1 ? (v = this._config) == null ? void 0 : v.maxLength : (p = this._config) == null ? void 0 : p.maxLengthLevel;
+      let g = n.innerHTML || n.textContent || "";
+      if (c) {
+        const l = ((o = (r = this._element) == null ? void 0 : r.textContent) == null ? void 0 : o.length) || 0, h = Math.max(0, c - l), u = n.textContent || "";
+        u.length > h && (g = u.slice(0, h));
+      }
+      this.data = { level: i, text: g };
     }
   }
   static get pasteConfig() {
@@ -351,12 +366,12 @@ class C {
       //   data: { level: 1 },
       // },
       {
-        icon: f,
+        icon: L,
         title: "Heading 2",
         data: { level: 2 }
       },
       {
-        icon: m,
+        icon: w,
         title: "Heading 3",
         data: { level: 3 }
       }
@@ -364,5 +379,5 @@ class C {
   }
 }
 export {
-  C as default
+  _ as default
 };
