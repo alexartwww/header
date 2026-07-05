@@ -8,7 +8,7 @@ const w = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="
  * @license MIT
  * @version 2.0.0
  */
-class b {
+class _ {
   constructor({ data: e, config: t, api: s, readOnly: i, block: c }) {
     this.api = s, this.readOnly = i, this._block = c, this._config = t ?? null, this._data = this.normalizeData(e), this._element = this.getTag();
   }
@@ -121,12 +121,15 @@ class b {
    * Validate Text block data:
    * - check for emptiness
    *
+   * The first H1 with holdFirstHeader is protected from removal (see blockEvents/blockManager),
+   * so it must stay valid even when empty — otherwise Saver skips it as an invalid block on save.
+   *
    * @param {HeaderData} blockData — data received after saving
    * @returns {boolean} false if saved data is not correct, otherwise true
    * @public
    */
   validate(e) {
-    return e.text.trim() !== "";
+    return this._config.holdFirstHeader === !0 && e.level === 1 ? !0 : e.text.trim() !== "";
   }
   /**
    * Extract Tool's data from the view
@@ -371,5 +374,5 @@ class b {
   }
 }
 export {
-  b as default
+  _ as default
 };
